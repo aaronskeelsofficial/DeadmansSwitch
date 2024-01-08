@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deadman's Switch</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      let offsetSeconds = (30*2)*24*60*60;
+      let futureDate = new Date(new Date().getTime() + (offsetSeconds * 1000));
+      console.log(futureDate.toLocaleString('en-US', {timeZone: 'America/Los_Angeles'}););
+    </script>
+  </head>
+  <body>
+    <p id="body"></p>
+    <script>
+      let s = "Your presence has been logged. Deadman's switch will activate on " + futureDate.toLocaleString('en-US', {timeZone: 'America/Los_Angeles'}); + "!";
+      temp = document.getElementById("body");
+      temp.innerHTML = s;
+    </script>
+  </body>
+</html>
