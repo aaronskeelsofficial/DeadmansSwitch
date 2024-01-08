@@ -7,6 +7,7 @@ var nodemailer = require('nodemailer');
 const _HOMEDIR = __dirname;
 const _DEBUG = false;
 const _ENABLEWARNINGMESSAGES = true;
+const _PORT = process.env.PORT;
 
 // let checkpointDate = new Date(2022,3,15);
 
@@ -74,7 +75,7 @@ app.get('/emailgen', (req, res) => {
   res.send(JSON.stringify(s, null, 2));
 });
 
-app.listen(3000, () => {
+app.listen(_PORT, () => {
 });
 
 var transporter = nodemailer.createTransport({
