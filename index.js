@@ -4,11 +4,12 @@ const app = express();
 const beautify = require("json-beautify");
 var nodemailer = require('nodemailer');
 
-const _HOMEDIR = "/home/runner/DeadmansSwitch/";
+const _HOMEDIR = __dirname;
 const _DEBUG = false;
 const _ENABLEWARNINGMESSAGES = true;
 
 // let checkpointDate = new Date(2022,3,15);
+
 if(process.argv[2] == 1)
   fs.writeFileSync(_HOMEDIR + "/startuptime.txt", new Date().getTime() + "");
 let checkpointDate = new Date(parseInt(fs.readFileSync(_HOMEDIR + "/startuptime.txt", 'utf8')));
